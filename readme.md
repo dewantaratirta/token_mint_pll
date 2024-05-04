@@ -20,5 +20,6 @@ yarn start
 add mnemonic to run your other account
 
 ```
-MNEMONIC="your mnemonic" yarn start
+wallet=2 yarn start
+wallet=3 yarn start
 ```

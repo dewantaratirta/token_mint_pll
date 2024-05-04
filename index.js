@@ -10,7 +10,8 @@ const alchemyProvider = new ethers.AlchemyProvider(
 );
 
 // load wallet from mnemonic
-const wallet = ethers.Wallet.fromPhrase(process.env?.MNEMONIC || env?.MNEMONIC);
+const choose_wallet = (process.env?.wallet == undefined) ? env?.MNEMONIC : env?.[`MNEMONIC${process.env?.wallet}`];
+const wallet = ethers.Wallet.fromPhrase(choose_wallet);
 const { address: wallet_address, privateKey } = wallet;
 
 console.log(`Your wallet address: ${wallet_address}`);
